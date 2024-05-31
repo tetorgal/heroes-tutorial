@@ -1,0 +1,57 @@
+.container {
+  max-width: 400px; /* Ajusta este valor según el ancho deseado */
+  width: 100%;
+}
+
+.form-container {
+  border-radius: 1em;
+  box-shadow: -1px 9px 27px 4px rgba(116, 116, 116, 0.8);
+  -webkit-box-shadow: -1px 9px 27px 4px rgba(116, 116, 116, 0.8);
+  -moz-box-shadow: -1px 9px 27px 4px rgba(116, 116, 116, 0.8);
+}
+
+.card-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 1em 0;
+}
+
+.title {
+  margin: 0 auto;
+  color: rgb(118, 37, 140);
+  font-weight: 900;
+}
+
+.form {
+  min-width: 10em;
+  max-width: 16em;
+  width: 100%;
+  padding: 2em;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em; /* Agrega un espacio de 1em entre los campos */
+}
+
+.input-max-width {
+  width: 100%;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em; /* Agrega un espacio de 0.5em entre el texto y el toggle */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em; /* Agrega un espacio de 1.5em entre los campos y el botón */
+}
+

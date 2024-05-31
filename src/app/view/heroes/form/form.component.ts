@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { UserService } from 'src/app/service/user.service';
+import { User } from 'src/app/model/user';
 
 
 @Component({
@@ -21,7 +23,7 @@ export class FormComponent implements OnInit {
     event.stopPropagation();
   }
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -29,14 +31,25 @@ export class FormComponent implements OnInit {
 
   initForm() {
     this.formGroup = this.formBuilder.group({
-      name: ["", Validators.required],
-      email: ["", [Validators.required, Validators.email]],
-      password: ["", [Validators.required]],
-      phone: ["", Validators.required]
+      name: ['', Validators.required],
+      lastName: ['', Validators.required],
+      age: ['', [Validators.required, Validators.min(1)]],
+      status: [false, Validators.required]
     });
   }
   submit() {
-    console.log(this.formGroup.value)
+    if (this.formGroup.valid) {
+      const user: User = {
+        id: this.userService.getData().length + 1, // Genera un nuevo ID
+        name: this.formGroup.value.name,
+        lastName: this.formGroup.value.lastName,
+        age: this.formGroup.value.age,
+        status: this.formGroup.value.status
+      };
+
+      this.userService.addData(user);
+      this.formGroup.reset();
+    }
   }
 }
 export class FormFieldPrefixSuffixExample {

@@ -1,23 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
 /* Application-wide Styles */
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Segoe UI", sans-serif; }
-  body {
-    margin: 2em;
-    padding: 2em;
-  }
 
-.form {
-  min-width: 10em;
-  max-width: 16em;
-  width: 100%;
-  padding: 2em;
-  border: #ccc solid;
-  border-radius: 1em;
+html, body {
+  height: 100%;
 }
 
-.input-max-width {
-  width: 100%;
-  margin-top: 1em;
-  padding: 2;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Estilos para el contenedor principal del navbar */
+nav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Estilos para la lista desordenada */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para los elementos de la lista */
+nav li {
+  float: left;
+}
+
+/* Estilos para los enlaces del navbar */
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Cambio de color al pasar el cursor sobre los enlaces */
+nav li a:hover {
+  background-color: #ddd;
+  color: #333;
+}
+
+/* Estilos para el enlace activo (la página actual) */
+nav li.active a {
+  background-color: #4caf50;
+  color: white;
 }
